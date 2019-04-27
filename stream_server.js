@@ -1,3 +1,4 @@
+// Streaming for videos
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
@@ -12,7 +13,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/stream', (req, res) => {
-    const path = __dirname + '/content/MeshNet.mov';
+    const path = __dirname + '/MeshNet.mov';
     const stat = fs.statSync(path);
     const fileSize = stat.size;
     const range = req.headers.range;
@@ -46,7 +47,9 @@ router.get('/stream', (req, res) => {
     }
 });
 
-app.get('/api/nextChunk', )
+app.get('/api/stream', function (req, res) {
+
+});
 
 app.use('/', router);
 app.listen(port, '0.0.0.0', () => console.log(`Listening on port ${port}`));
