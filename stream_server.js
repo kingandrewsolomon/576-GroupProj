@@ -13,7 +13,17 @@ router.get('/', (req, res) => {
 });
 
 router.get('/stream', (req, res) => {
-    const path = __dirname + '/videos/something.mp4';
+    console.log(req.url);
+    let t = req.url;
+
+    if (t.indexOf('?') === -1) {
+        t = '/stream?movie=MeshNet.mov';
+    }
+
+    t = t.split("?");
+    t.splice(0, 1);
+    let video = t[0].split('=')[1];
+    const path = __dirname + `/${video}`;
     const stat = fs.statSync(path);
     const fileSize = stat.size;
     const range = req.headers.range;
@@ -22,9 +32,9 @@ router.get('/stream', (req, res) => {
         const parts = range.replace(/bytes=/, "").split("-");
         const start = parseInt(parts[0], 10);
         const end = parts[1] ?
-            parseInt(parts[1], 10) :
+            parseInt(parts[1], 10) : //parse the integer of type decimal
             fileSize - 1;
-        const chunksize = (end - start) + 1;
+        const chunksize = (end - start) + 1; // chu
         const file = fs.createReadStream(path, {
             start,
             end
@@ -47,8 +57,7 @@ router.get('/stream', (req, res) => {
     }
 });
 
-router.get('/*', (req, res) => {
-    console.log(req.url);
+app.get('/content/*', function (req, res) {
     res.sendFile(path.join(__dirname + req.url));
 });
 
