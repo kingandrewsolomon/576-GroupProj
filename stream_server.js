@@ -17,7 +17,7 @@ router.get('/stream', (req, res) => {
     let t = req.url;
 
     if (t.indexOf('?') === -1) {
-        t = '/stream?movie=shrek.mov';
+        t = '/stream?movie=MeshNet.mov';
     }
 
     t = t.split("?");
