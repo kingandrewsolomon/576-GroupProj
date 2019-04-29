@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/stream', (req, res) => {
-    const path = __dirname + '/105.mov';
+    const path = __dirname + '/Avengers.mov';
     const stat = fs.statSync(path);
     const fileSize = stat.size;
     const range = req.headers.range;
