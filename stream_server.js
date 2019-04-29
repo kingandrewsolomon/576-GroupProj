@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/stream', (req, res) => {
-    const path = __dirname + '/MeshNet.mov';
+    const path = __dirname + '/105.mov';
     const stat = fs.statSync(path);
     const fileSize = stat.size;
     const range = req.headers.range;

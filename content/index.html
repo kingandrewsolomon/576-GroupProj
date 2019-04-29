@@ -4,17 +4,43 @@
 <head>
     <title>Hello World!</title>
     <link rel="icon" href="/content/favicon.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
-    <h1>Hello World!</h1>
-    <p>We are using node.js</p>
-    <div>
-        <input id="search" placeholder="Search for Video" type="text">
-        <input type="button" value="Search">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">RPi Media Streamer</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Video<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Music</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Books</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <div>
+                    <input id="search" placeholder="Search for Video" type="text">
+                    <input type="button" value="Search">
+                </div>
+                <video id="video" src="/stream" style="width: 100%; height: 100%;" controls></video>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
     </div>
-    <video id="video" src="/stream" style="width: 400px; height: 200px;" controls>
-    </video>
 
 </body>
 
