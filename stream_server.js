@@ -13,7 +13,17 @@ router.get('/', (req, res) => {
 });
 
 router.get('/stream', (req, res) => {
-    const path = __dirname + '/Avengers.mov';
+    console.log(req.url);
+    let t = req.url;
+
+    if (t.indexOf('?') === -1) {
+        t = '/stream?movie=shrek.mov';
+    }
+
+    t = t.split("?");
+    t.splice(0, 1);
+    let video = t[0].split('=')[1];
+    const path = __dirname + `/${video}`;
     const stat = fs.statSync(path);
     const fileSize = stat.size;
     const range = req.headers.range;
@@ -47,8 +57,8 @@ router.get('/stream', (req, res) => {
     }
 });
 
-app.get('/api/stream', function (req, res) {
-
+app.get('/content/*', function (req, res) {
+    res.sendFile(path.join(__dirname + req.url));
 });
 
 app.use('/', router);
