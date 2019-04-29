@@ -32,9 +32,9 @@ router.get('/stream', (req, res) => {
         const parts = range.replace(/bytes=/, "").split("-");
         const start = parseInt(parts[0], 10);
         const end = parts[1] ?
-            parseInt(parts[1], 10) :
+            parseInt(parts[1], 10) : //parse the integer of type decimal
             fileSize - 1;
-        const chunksize = (end - start) + 1;
+        const chunksize = (end - start) + 1; // chu
         const file = fs.createReadStream(path, {
             start,
             end
