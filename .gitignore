@@ -1,4 +1,11 @@
+.DS_Store
 .jshintrc
 favicon.ico
 *.mov
-favicon.ico
+*.mp3
+*.mp4
+*.txt
+*.pdf
+*.jpg
+*.png
+*.gif

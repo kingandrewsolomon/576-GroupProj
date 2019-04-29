@@ -9,11 +9,11 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
     console.log("recieving request");
-    res.sendFile(path.join(__dirname + '/content/index.html'));
+    res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
 router.get('/stream', (req, res) => {
-    const path = __dirname + '/MeshNet.mov';
+    const path = __dirname + '/videos/something.mp4';
     const stat = fs.statSync(path);
     const fileSize = stat.size;
     const range = req.headers.range;
@@ -47,8 +47,9 @@ router.get('/stream', (req, res) => {
     }
 });
 
-app.get('/api/stream', function (req, res) {
-
+router.get('/*', (req, res) => {
+    console.log(req.url);
+    res.sendFile(path.join(__dirname + req.url));
 });
 
 app.use('/', router);
