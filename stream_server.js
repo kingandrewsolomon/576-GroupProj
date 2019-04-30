@@ -44,7 +44,7 @@ router.get('/stream', (req, res) => {
         const end = parts[1] ?
             parseInt(parts[1], 10) : //parse the integer of type decimal
             fileSize - 1;
-        const chunksize = (end - start) + 1; // chu
+        const chunksize = (end - start) + 1;
         const file = fs.createReadStream(path, {
             start,
             end
@@ -70,6 +70,6 @@ router.get('/stream', (req, res) => {
 app.get('/content/*', function (req, res) {
     res.sendFile(path.join(__dirname + req.url));
 });
-
 app.use('/', router);
+app.use('/public', express.static('public'))
 app.listen(port, '0.0.0.0', () => console.log(`Listening on port ${port}`));

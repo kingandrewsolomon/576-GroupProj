@@ -1,0 +1,15 @@
+body {
+    background-color: black;
+}
+h1,h3 {
+    color: rgb(205, 236, 255);
+}
+p {
+    color: rgb(205, 236, 255);
+}
+a {
+    color: rgb(121, 199, 248);
+}
+a:hover {
+    color: rgb(255, 236, 70);
+}
