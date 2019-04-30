@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
-        h1,h3,p {color: white;}
+        h1 {color: white;}
     </style>
 </head>
 
@@ -19,14 +19,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/video">Video<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/video">Video</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/music">Music</a>
+                        <a class="nav-link" href="/music">Music</a>
                 </li>
             </ul>
         </div>
@@ -36,18 +36,10 @@
         <div class="row">
             <div class="col-sm-2"></div>
             <div class="col-sm-8" style="background-color: #0C0032;padding-bottom: 45px;padding-top: 15px; height: 800px">
-                <h1>WELCOME</h1>
-                <p>A Raspberry Pi Streaming Server. Click on a link to stream our media</p>
-                <h3>Videos</h3>
+                <h1>VIDEOS</h1>
                 <a href="/stream?movie=videos/105.mov">Avatar The Last Airbender: The King of Omashu</a></br>
                 <a href="/stream?movie=videos/Avengers.mov">Avengers</a></br>
                 <a href="/stream?movie=videos/MeshNet.mov">MeshNet</a></br></br> 
-                <h3>Music</h3>
-                <a href="/stream?movie=music/Come_Down.mp3">Come Down</a></br>
-                <a href="/stream?movie=music/El_Sonidito.mp3">El Sonidito</a></br>
-                <a href="/stream?movie=music/Oui.mp3">Oui</a></br>
-                <a href="/stream?movie=music/USSRAnthem.mp3">USSR Anthem</a></br>
-                <a href="/stream?movie=music/NaNaNa.mp3">Na Na Na</a></br></br>
             </div>
             <div class="col-sm-2"></div>
         </div>

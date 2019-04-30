@@ -12,6 +12,16 @@ router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + '/content/index.html'));
 });
 
+router.get('/video', (req, res) => {
+    console.log("video page");
+    res.sendFile(path.join(__dirname + '/content/video.html'));
+});
+
+router.get('/music', (req, res) => {
+    console.log("music page");
+    res.sendFile(path.join(__dirname + '/content/music.html'));
+});
+
 router.get('/stream', (req, res) => {
     console.log(req.url);
     let t = req.url;
