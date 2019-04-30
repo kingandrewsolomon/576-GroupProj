@@ -2,13 +2,14 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const favicon = require('serve-favicon')
 
 const port = 80;
 const app = express();
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    console.log("recieving request");
+    console.log("receiving request");
     res.sendFile(path.join(__dirname + '/content/index.html'));
 });
 
@@ -72,4 +73,5 @@ app.get('/content/*', function (req, res) {
 });
 app.use('/', router);
 app.use('/public', express.static('public'))
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 app.listen(port, '0.0.0.0', () => console.log(`Listening on port ${port}`));
