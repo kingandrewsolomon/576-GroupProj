@@ -9,7 +9,7 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
     console.log("recieving request");
-    res.sendFile(path.join(__dirname + '/public/index.html'));
+    res.sendFile(path.join(__dirname + '/content/index.html'));
 });
 
 router.get('/stream', (req, res) => {
